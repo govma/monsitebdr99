@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        section {
+            padding: 2em;
+            text-align: center;
+        }
+        .contact {
+            margin-top: 2em;
+        }
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            color: white;
+            background-color: #4CAF50;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .robot-image {
+            width: 300px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+        }
+        #lang-switch {
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="title">Bienvenue sur mon portfolio</h1>
+        <p id="subtitle">Je suis développeur web et créateur de solutions numériques</p>
+    </header>
+    <section>
+        <img src="robot.jpg" alt="Robot professionnel travaillant sur un ordinateur" class="robot-image">
+        <h2 id="about-title">À propos de moi</h2>
+        <p id="about-text">Je suis passionné par le développement web et la création d'expériences utilisateur innovantes. Contactez-moi pour en savoir plus !</p>
+        <div class="contact">
+            <a href="mailto:badreamrouss66@gmaail.com" class="button" id="email-button">Envoyer un e-mail</a>
+            <a href="tel:+212671973136" class="button" id="phone-button">Appeler</a>
+        </div>
+        <button id="lang-switch" class="button">english</button>
+    </section>
+
+    <script>
+        const translations = {
+            fr: {
+                title: "Bienvenue sur mon portfolio",
+                subtitle: "Je suis développeur web et créateur de solutions numériques",
+                aboutTitle: "À propos de moi",
+                aboutText: "Je suis passionné par le développement web et la création d'expériences utilisateur innovantes. Contactez-moi pour en savoir plus !",
+                emailButton: "Envoyer un e-mail",
+                phoneButton: "Appeler",
+                langSwitch: "Changer la langue"
+            },
+            en: {
+                title: "Welcome to my portfolio",
+                subtitle: "I am a web developer and digital solutions creator",
+                aboutTitle: "About Me",
+                aboutText: "I am passionate about web development and creating innovative user experiences. Contact me to learn more!",
+                emailButton: "Send an Email",
+                phoneButton: "Call",
+                langSwitch: "Switch Language"
+            }
+        };
+
+        let currentLang = "fr";
+
+        document.getElementById("lang-switch").addEventListener("click", () => {
+            currentLang = currentLang === "fr" ? "en" : "fr";
+            document.getElementById("title").textContent = translations[currentLang].title;
+            document.getElementById("subtitle").textContent = translations[currentLang].subtitle;
+            document.getElementById("about-title").textContent = translations[currentLang].aboutTitle;
+            document.getElementById("about-text").textContent = translations[currentLang].aboutText;
+            document.getElementById("email-button").textContent = translations[currentLang].emailButton;
+            document.getElementById("phone-button").textContent = translations[currentLang].phoneButton;
+            document.getElementById("lang-switch").textContent = translations[currentLang].langSwitch;
+        });
+    </script>
+</body>
+</html>
